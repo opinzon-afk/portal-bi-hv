@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Portal BI Cliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background-color: #f2f2f2;
+        }
+        header {
+            background-color: #1f4e79;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 22px;
+        }
+        .menu {
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            border: none;
+            background-color: #1f4e79;
+            color: white;
+            font-size: 14px;
+        }
+        button:hover {
+            background-color: #163a5c;
+        }
+        iframe {
+            width: 100%;
+            height: 700px;
+            border: none;
+        }
+        .report {
+            display: none;
+            width: 95%;
+            margin: auto;
+        }
+        .active {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+<header>Portal BI Cliente</header>
+
+<div class="menu">
+    <button onclick="showReport('r1')">Reporte 1</button>
+    <button onclick="showReport('r2')">Reporte 2</button>
+</div>
+
+<div id="r1" class="report active">
+    https://app.powerbi.com/view?r=eyJrIjoiNzUzMmI3YWItMDkzNy00NGQ5LWIwYWQtNzIzMmJkM2UwOGExIiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9
+</div>
+
+<div id="r2" class="report">
+    https://app.powerbi.com/view?r=eyJrIjoiM2Y1YzM3NGItMjMwMy00ZWRlLWJiYzgtYjZkYjA5ZmU5M2Y1IiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9
+</div>
+
+<script>
+function showReport(id) {
+    document.getElementById('r1').classList.remove('active');
+    document.getElementById('r2').classList.remove('active');
+    document.getElementById(id).classList.add('active');
+}
+</script>
+
+</body>
+</html>
