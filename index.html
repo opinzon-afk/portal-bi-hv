@@ -8,21 +8,21 @@
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            background-color: #f4f6f9;
+            background-color: #eef2f7;
         }
 
-        /* ===== HEADER ===== */
+        /* ===== HEADER===== */
 
         header {
             background-color: #0033A0;
-            padding: 20px 50px;
+            padding: 10px 40px;   
             position: relative;
             display: flex;
             align-items: center;
         }
 
         .logo {
-            height: 80px;
+            height: 60px;
         }
 
         .header-title {
@@ -30,7 +30,7 @@
             left: 50%;
             transform: translateX(-50%);
             color: white;
-            font-size: 26px;
+            font-size: 22px;
             font-weight: bold;
         }
 
@@ -42,13 +42,13 @@
         }
 
         button {
-            padding: 12px 25px;
-            margin: 8px;
+            padding: 10px 22px;
+            margin: 6px;
             cursor: pointer;
             border: none;
             background-color: #0033A0;
             color: white;
-            font-size: 15px;
+            font-size: 14px;
             border-radius: 6px;
             transition: 0.3s ease;
             display: inline-flex;
@@ -60,18 +60,26 @@
             opacity: 0.85;
         }
 
-        /* ===== REPORTS ===== */
+        /* ===== CONTENEDOR TIPO CARD ===== */
+
+        .report-wrapper {
+            width: 92%;
+            margin: 30px auto;
+            background-color: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            padding: 20px;
+        }
 
         iframe {
             width: 100%;
-            height: 800px;
+            height: 780px;
             border: none;
+            border-radius: 8px;
         }
 
         .report {
             display: none;
-            width: 95%;
-            margin: auto;
         }
 
         .active {
@@ -93,18 +101,20 @@
     <button onclick="showReport('r2')">Plan Aliados</button>
 </div>
 
-<div id="r1" class="report active">
-    <iframe title="Milla Extra"
-        src="https://app.powerbi.com/view?r=eyJrIjoiZWIxN2NkOWYtMjdkZS00MzhlLTkyODctNTNlNTMzZWUzNDY4IiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"
-        allowFullScreen="true">
-    </iframe>
-</div>
+<div class="report-wrapper">
+    <div id="r1" class="report active">
+        <iframe title="Milla Extra"
+            src="https://app.powerbi.com/view?r=eyJrIjoiZWIxN2NkOWYtMjdkZS00MzhlLTkyODctNTNlNTMzZWUzNDY4IiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"
+            allowFullScreen="true">
+        </iframe>
+    </div>
 
-<div id="r2" class="report">
-    <iframe title="HV_Plan Aliados 2025"
-        src="https://app.powerbi.com/view?r=eyJrIjoiNzUzMmI3YWItMDkzNy00NGQ5LWIwYWQtNzIzMmJkM2UwOGExIiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"
-        allowFullScreen="true">
-    </iframe>
+    <div id="r2" class="report">
+        <iframe title="HV_Plan Aliados 2025"
+            src="https://app.powerbi.com/view?r=eyJrIjoiNzUzMmI3YWItMDkzNy00NGQ5LWIwYWQtNzIzMmJkM2UwOGExIiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"
+            allowFullScreen="true">
+        </iframe>
+    </div>
 </div>
 
 <script>
