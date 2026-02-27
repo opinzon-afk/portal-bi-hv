@@ -12,11 +12,21 @@
 
         header {
             background-color: #0033A0;
+            padding: 18px;
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
             color: white;
-            padding: 20px;
-            text-align: center;
             font-size: 24px;
             font-weight: bold;
+        }
+
+        .logo {
+            height: 50px;
         }
 
         .menu {
@@ -34,6 +44,9 @@
             font-size: 15px;
             border-radius: 6px;
             transition: 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
 
         button:hover {
@@ -60,8 +73,12 @@
 </head>
 <body>
 
-<header>Portal BI Harinera del Valle</header>
-
+<header>
+    <div class="header-container">
+        <img src="hv blanco sin fondo.png" alt="Logo Harinera del Valle" class="logo">
+        <span>Portal BI Harinera del Valle</span>
+    </div>
+</header>
 <div class="menu">
     <button onclick="showReport('r1')">Milla Extra</button>
     <button onclick="showReport('r2')">Plan Aliados</button>
@@ -91,4 +108,5 @@ function showReport(id) {
 
 </body>
 </html>
+
 
