@@ -11,7 +11,7 @@
             background-color: #eef2f7;
         }
 
-        /* ===== HEADER CORPORATIVO ===== */
+        /* ===== HEADER ===== */
 
         header {
             background-color: #0033A0;
@@ -21,7 +21,6 @@
             align-items: center;
         }
 
-        /* Franja verde inferior */
         header::after {
             content: "";
             position: absolute;
@@ -45,33 +44,33 @@
             font-weight: bold;
         }
 
-        /* ===== MENU ===== */
+        /* ===== MENU DESPLEGABLE ===== */
 
         .menu {
             text-align: center;
             margin: 30px;
         }
 
-        button {
-            padding: 10px 22px;
-            margin: 6px;
-            cursor: pointer;
-            border: none;
+        select {
+            padding: 10px 20px;
+            font-size: 15px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
             background-color: #0033A0;
             color: white;
-            font-size: 14px;
-            border-radius: 6px;
-            transition: 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
+            cursor: pointer;
         }
 
-        button:hover {
-            opacity: 0.85;
+        select:focus {
+            outline: none;
         }
 
-        /* ===== CONTENEDOR TIPO CARD ===== */
+        option {
+            background-color: white;
+            color: black;
+        }
+
+        /* ===== CONTENEDOR ===== */
 
         .report-wrapper {
             width: 92%;
@@ -108,8 +107,10 @@
 </header>
 
 <div class="menu">
-    <button onclick="showReport('r1')">Milla Extra</button>
-    <button onclick="showReport('r2')">Plan Aliados</button>
+    <select onchange="showReport(this.value)">
+        <option value="r1">📊 Milla Extra</option>
+        <option value="r2">🤝 Plan Aliados 2025</option>
+    </select>
 </div>
 
 <div class="report-wrapper">
