@@ -22,7 +22,6 @@
             justify-content: space-between;
         }
 
-        /* Franja verde inferior */
         header::after {
             content: "";
             position: absolute;
@@ -37,7 +36,6 @@
             height: 60px;
         }
 
-        /* Título centrado real */
         .header-title {
             position: absolute;
             left: 50%;
@@ -47,7 +45,7 @@
             font-weight: bold;
         }
 
-        /* ===== Selector en header ===== */
+        /* ===== Selector ===== */
 
         .dashboard-selector {
             display: flex;
@@ -66,10 +64,6 @@
             color: #0033A0;
             font-weight: bold;
             cursor: pointer;
-        }
-
-        .dashboard-selector select:focus {
-            outline: none;
         }
 
         /* ===== CONTENEDOR ===== */
@@ -104,46 +98,71 @@
 <body>
 
 <header>
-    <!-- Logo izquierda -->
-    <img src="hv blanco sin fondo.png" alt="Logo Harinera del Valle" class="logo">
 
-    <!-- Título centrado -->
-    <div class="header-title">Portal BI Harinera del Valle</div>
+    <img src="hv blanco sin fondo.png" class="logo">
 
-    <!-- Selector derecha -->
+    <div class="header-title">
+        Portal BI Harinera del Valle
+    </div>
+
     <div class="dashboard-selector">
         <span>Tableros</span>
+
         <select onchange="showReport(this.value)">
             <option value="r1">Milla Extra</option>
-            <option value="r2">Plan Aliados</option>
+            <option value="r2">Plan Aliados 2025</option>
+            <option value="r3">Misiones</option>
         </select>
+
     </div>
+
 </header>
 
+
 <div class="report-wrapper">
+
+    <!-- REPORTE 1 -->
     <div id="r1" class="report active">
-        <iframe title="Milla Extra"
-            src="https://app.powerbi.com/view?r=eyJrIjoiZWIxN2NkOWYtMjdkZS00MzhlLTkyODctNTNlNTMzZWUzNDY4IiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"
-            allowFullScreen="true">
+        <iframe
+        src="https://app.powerbi.com/view?r=eyJrIjoiZWIxN2NkOWYtMjdkZS00MzhlLTkyODctNTNlNTMzZWUzNDY4IiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"
+        allowFullScreen="true">
         </iframe>
     </div>
 
+    <!-- REPORTE 2 -->
     <div id="r2" class="report">
-        <iframe title="HV_Plan Aliados 2025"
-            src="https://app.powerbi.com/view?r=eyJrIjoiNzUzMmI3YWItMDkzNy00NGQ5LWIwYWQtNzIzMmJkM2UwOGExIiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"
-            allowFullScreen="true">
+        <iframe
+        src="https://app.powerbi.com/view?r=eyJrIjoiNzUzMmI3YWItMDkzNy00NGQ5LWIwYWQtNzIzMmJkM2UwOGExIiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"
+        allowFullScreen="true">
         </iframe>
     </div>
+
+    <!-- REPORTE 3 -->
+    <div id="r3" class="report">
+        <iframe
+        src="https://app.powerbi.com/view?r=eyJrIjoiZDVmZTUwMWUtMTFkNS00ZDlkLTkxOTQtM2IzMDA5MmRhNmNhIiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"
+        allowFullScreen="true">
+        </iframe>
+    </div>
+
 </div>
 
+
 <script>
+
 function showReport(id) {
-    document.getElementById('r1').classList.remove('active');
-    document.getElementById('r2').classList.remove('active');
-    document.getElementById(id).classList.add('active');
+
+    let reports = document.querySelectorAll(".report");
+
+    reports.forEach(function(report) {
+        report.classList.remove("active");
+    });
+
+    document.getElementById(id).classList.add("active");
+
 }
+
 </script>
 
 </body>
 </html>
-
