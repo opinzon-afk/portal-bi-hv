@@ -1,172 +1,177 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Portal BI Harinera del Valle</title>
+<meta charset="UTF-8">
+<title>Portal BI Harinera del Valle</title>
 
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            background-color: #eef2f7;
-        }
+<style>
 
-        /* ===== HEADER ===== */
+body{
+font-family:Arial, sans-serif;
+margin:0;
+background-color:#eef2f7;
+}
 
-        header {
-            background-color: #0033A0;
-            padding: 12px 40px;
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
+/* ===== HEADER ===== */
 
-        header::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background-color: #196B24;
-        }
+header{
+background-color:#0033A0;
+padding:12px 40px;
+position:relative;
+display:flex;
+align-items:center;
+justify-content:space-between;
+}
 
-        .logo {
-            height: 60px;
-        }
+header::after{
+content:"";
+position:absolute;
+bottom:0;
+left:0;
+width:100%;
+height:6px;
+background-color:#196B24;
+}
 
-        .header-title {
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-size: 22px;
-            font-weight: bold;
-        }
+.logo{
+height:60px;
+}
 
-        /* ===== Selector ===== */
+.header-title{
+position:absolute;
+left:50%;
+transform:translateX(-50%);
+color:white;
+font-size:22px;
+font-weight:bold;
+}
 
-        .dashboard-selector {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            color: white;
-            font-size: 14px;
-            font-weight: bold;
-        }
+/* ===== MENU CORPORATIVO ===== */
 
-        .dashboard-selector select {
-            padding: 6px 12px;
-            border-radius: 6px;
-            border: none;
-            background-color: white;
-            color: #0033A0;
-            font-weight: bold;
-            cursor: pointer;
-        }
+.dashboard-menu{
+display:flex;
+gap:18px;
+align-items:center;
+}
 
-        /* ===== CONTENEDOR ===== */
+.dashboard-button{
+color:white;
+font-weight:bold;
+cursor:pointer;
+padding:6px 10px;
+border-radius:6px;
+transition:0.2s;
+}
 
-        .report-wrapper {
-            width: 92%;
-            margin: 30px auto;
-            background-color: white;
-            border-radius: 12px;
-            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
-            padding: 20px;
-        }
+.dashboard-button:hover{
+background-color:rgba(255,255,255,0.15);
+}
 
-        iframe {
-            width: 100%;
-            height: 780px;
-            border: none;
-            border-radius: 8px;
-        }
+.dashboard-button.active-tab{
+background-color:white;
+color:#0033A0;
+}
 
-        .report {
-            display: none;
-        }
+/* ===== CONTENEDOR ===== */
 
-        .active {
-            display: block;
-        }
+.report-wrapper{
+width:92%;
+margin:30px auto;
+background-color:white;
+border-radius:12px;
+box-shadow:0 8px 20px rgba(0,0,0,0.08);
+padding:20px;
+}
 
-    </style>
+iframe{
+width:100%;
+height:780px;
+border:none;
+border-radius:8px;
+}
+
+.report{
+display:none;
+}
+
+.active{
+display:block;
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
 
-    <img src="hv blanco sin fondo.png" class="logo">
+<img src="hv blanco sin fondo.png" class="logo">
 
-    <div class="header-title">
-        Portal BI Harinera del Valle
-    </div>
+<div class="header-title">
+Portal BI Harinera del Valle
+</div>
 
-    <div class="dashboard-selector">
-        <span>Tableros</span>
+<div class="dashboard-menu">
 
-        <select onchange="showReport(this.value)">
-            <option value="r1">Milla Extra</option>
-            <option value="r2">Plan Aliados</option>
-            <option value="r3">Colman's</option>
-            <option value="r4">Dar vida</option>
-        </select>
+<div class="dashboard-button active-tab" onclick="showReport('r1',this)">
+Milla Extra
+</div>
 
-    </div>
+<div class="dashboard-button" onclick="showReport('r2',this)">
+Plan Aliados
+</div>
+
+<div class="dashboard-button" onclick="showReport('r3',this)">
+Colman's
+</div>
+
+<div class="dashboard-button" onclick="showReport('r4',this)">
+Dar vida
+</div>
+
+</div>
 
 </header>
 
 
 <div class="report-wrapper">
 
-    <!-- REPORTE 1 -->
-    <div id="r1" class="report active">
-        <iframe
-        src="https://app.powerbi.com/view?r=eyJrIjoiZWIxN2NkOWYtMjdkZS00MzhlLTkyODctNTNlNTMzZWUzNDY4IiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"
-        allowFullScreen="true">
-        </iframe>
-    </div>
+<div id="r1" class="report active">
+<iframe src="https://app.powerbi.com/view?r=eyJrIjoiZWIxN2NkOWYtMjdkZS00MzhlLTkyODctNTNlNTMzZWUzNDY4IiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"></iframe>
+</div>
 
-    <!-- REPORTE 2 -->
-    <div id="r2" class="report">
-        <iframe
-        src="https://app.powerbi.com/view?r=eyJrIjoiZDVhNGI5NjctYWViZi00YTU2LTg5NjYtYzRmNmQwZWFiZGEyIiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"
-        allowFullScreen="true">
-        </iframe>
-    </div>
+<div id="r2" class="report">
+<iframe src="https://app.powerbi.com/view?r=eyJrIjoiZDVhNGI5NjctYWViZi00YTU2LTg5NjYtYzRmNmQwZWFiZGEyIiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"></iframe>
+</div>
 
-    <!-- REPORTE 3 -->
-    <div id="r3" class="report">
-        <iframe
-        src="https://app.powerbi.com/view?r=eyJrIjoiZDlkNjMwZDQtMmQyYS00Njk1LThiNjgtOWNmOGQzYjIyZjgwIiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"
-        allowFullScreen="true">
-        </iframe>
-    </div>
-    
-    <!-- REPORTE 4 -->
-    <div id="r4" class="report">
-        <iframe
-        src="https://app.powerbi.com/view?r=eyJrIjoiZTc3M2MwM2ItMzEyNy00MDllLWJmZTgtY2U1M2YxNzNlYTViIiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"
-        allowFullScreen="true">
-        </iframe>
-    </div>
+<div id="r3" class="report">
+<iframe src="https://app.powerbi.com/view?r=eyJrIjoiZDlkNjMwZDQtMmQyYS00Njk1LThiNjgtOWNmOGQzYjIyZjgwIiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"></iframe>
+</div>
+
+<div id="r4" class="report">
+<iframe src="https://app.powerbi.com/view?r=eyJrIjoiZTc3M2MwM2ItMzEyNy00MDllLWJmZTgtY2U1M2YxNzNlYTViIiwidCI6IjE1MmFiNmRkLTYzM2QtNDZmZS1iNDY5LTRhN2EzYmUxMGUzZiIsImMiOjR9"></iframe>
+</div>
+
 </div>
 
 
 <script>
 
-function showReport(id) {
+function showReport(id,element){
 
-    let reports = document.querySelectorAll(".report");
+let reports=document.querySelectorAll(".report");
+reports.forEach(function(report){
+report.classList.remove("active");
+});
 
-    reports.forEach(function(report) {
-        report.classList.remove("active");
-    });
+document.getElementById(id).classList.add("active");
 
-    document.getElementById(id).classList.add("active");
+let tabs=document.querySelectorAll(".dashboard-button");
+tabs.forEach(function(tab){
+tab.classList.remove("active-tab");
+});
+
+element.classList.add("active-tab");
 
 }
 
@@ -174,4 +179,3 @@ function showReport(id) {
 
 </body>
 </html>
-
